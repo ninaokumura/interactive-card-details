@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "inear-gradient": "hsl(249, 99%, 64%) to hsl(278, 94%, 30%)",
+        "linear-gradient": "hsl(249, 99%, 64%) to hsl(278, 94%, 30%)",
         red: "hsl(0, 100%, 66%)",
         white: "hsl(0, 0%, 100%)",
         "light-grayish-violet": "hsl(270, 3%, 87%)",
@@ -14,6 +14,10 @@ module.exports = {
       fontFamily: {
         "sans-serif": ["Space Grotesk", "sans-serif"],
       },
+    },
+    backgroundImage: {
+      main: "url('/src/assets/images/bg-main-desktop.png')",
+      mobile: "url('/src/assets/images/bg-main-mobile.png')",
     },
   },
   plugins: [],
