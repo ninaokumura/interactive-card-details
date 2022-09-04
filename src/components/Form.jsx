@@ -74,10 +74,8 @@ export default function Form(props) {
     });
   }, [cvc, props]);
 
-  const onSubmit = (data, e) => {
-    console.log({ data });
-    console.log("Hello world!");
-    e.preventDefault();
+  const onSubmit = data => {
+    props.onSubmit();
   };
 
   return (
@@ -89,7 +87,7 @@ export default function Form(props) {
         type="text"
         placeholder="e.g. Jane Appleseed"
         label="CARDHOLDER NAME"
-        maxlength="100"
+        maxLength="100"
         errorMessage={errors.cardholderName?.message}
         {...register("cardholderName")}
       />
@@ -97,7 +95,7 @@ export default function Form(props) {
         type="number"
         placeholder="e.g. 1234 5678 9123 0000"
         label="CARD NUMBER"
-        maxlength="16"
+        maxLength="16"
         errorMessage={errors.cardNumber?.message}
         {...register("cardNumber")}
       />
@@ -120,7 +118,7 @@ export default function Form(props) {
             label="(MM/YY)"
             min="1"
             max="31"
-            maxlength="2"
+            maxLength="2"
             errorMessage={errors.expireYear?.message}
             {...register("expireYear")}
           />
@@ -133,7 +131,7 @@ export default function Form(props) {
           label="CVC"
           min="1"
           max="999"
-          maxlength="3"
+          maxLength="3"
           errorMessage={errors.cvc?.message}
           {...register("cvc")}
         />

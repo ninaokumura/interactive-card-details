@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import Card from "./components/Card";
 import Form from "./components/Form";
+import Confirmation from "./components/Confirmation";
 
 function App() {
   const [cardholderName, setCardholderName] = useState("");
@@ -9,6 +10,7 @@ function App() {
   const [expireDate, setExpireDate] = useState("");
   const [expireYear, setExpireYear] = useState("");
   const [cvc, setCvc] = useState("");
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   return (
     <div className="h-screen w-full sm:flex">
@@ -20,18 +22,23 @@ function App() {
         cvc={cvc || "000"}
       />
       <div className="bg-white w-full h-full flex items-start mt-20 sm:mt-0 justify-center sm:items-center">
-        <Form
-          cardholderName={cardholderName}
-          onCardholderNameChange={evt => setCardholderName(evt.target.value)}
-          cardNumber={cardNumber}
-          onCardNumberChange={evt => setCardNumber(evt.target.value)}
-          expireDate={expireDate}
-          onExpireDateChange={evt => setExpireDate(evt.target.value)}
-          expireYear={expireYear}
-          onExpireYearChange={evt => setExpireYear(evt.target.value)}
-          cvc={cvc}
-          onCvcChange={evt => setCvc(evt.target.value)}
-        />
+        {!isSubmitted ? (
+          <Form
+            cardholderName={cardholderName}
+            onCardholderNameChange={evt => setCardholderName(evt.target.value)}
+            cardNumber={cardNumber}
+            onCardNumberChange={evt => setCardNumber(evt.target.value)}
+            expireDate={expireDate}
+            onExpireDateChange={evt => setExpireDate(evt.target.value)}
+            expireYear={expireYear}
+            onExpireYearChange={evt => setExpireYear(evt.target.value)}
+            cvc={cvc}
+            onCvcChange={evt => setCvc(evt.target.value)}
+            onSubmit={() => setIsSubmitted(true)}
+          />
+        ) : (
+          <Confirmation />
+        )}
       </div>
     </div>
   );
