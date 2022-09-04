@@ -14,19 +14,19 @@ export default function Form(props) {
       .required(),
     expireDate: yup
       .number()
-      .typeError("You must enter a valid month")
+      .typeError("Can't be blank")
       .min(1)
       .max(12)
       .required(),
     expireYear: yup
       .number()
-      .typeError("You must enter a valid year")
+      .typeError("Can't be blank")
       .positive()
       .integer()
       .required(),
     cvc: yup
       .number()
-      .typeError("You must enter a valid cvc")
+      .typeError("Can't be blank")
       .positive()
       .integer()
       .required(),
@@ -83,7 +83,7 @@ export default function Form(props) {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col gap-4 px-4 text-sm"
+      className="flex flex-col gap-4 px-4 text-sm w-full max-w-sm"
     >
       <Input
         type="text"
@@ -101,8 +101,9 @@ export default function Form(props) {
         errorMessage={errors.cardNumber?.message}
         {...register("cardNumber")}
       />
-      <div className="flex gap-3">
-        <div className="w-[12rem] flex gap-3">
+
+      <div className="flex gap-5">
+        <div className="w-[10rem] flex gap-3">
           <Input
             type="number"
             placeholder="MM"
@@ -126,6 +127,7 @@ export default function Form(props) {
         </div>
 
         <Input
+          className="w-40"
           type="number"
           placeholder="e.g. 123"
           label="CVC"

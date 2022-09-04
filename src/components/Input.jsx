@@ -5,7 +5,7 @@ const Input = React.forwardRef(
   ({ className, label, errorMessage, ...props }, ref) => {
     return (
       <div className="flex flex-col gap-2 max-w-xl">
-        <label className="font-semibold tracking-[0.1em] font-sans-serif w-full text-xs grid gap-2">
+        <label className="font-semibold tracking-[0.1em] font-sans-serif w-full text-xs grid gap-1.5">
           {label}
           <input
             ref={ref}
@@ -16,7 +16,7 @@ const Input = React.forwardRef(
             )}
           />
           {errorMessage && (
-            <p role="alert" className="text-red-500 p-2 max-w-[20rem]">
+            <p role="alert" className="text-red-500 max-w-[20rem] text-xs">
               {errorMessage}
             </p>
           )}
