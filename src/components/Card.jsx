@@ -23,15 +23,15 @@ export default function Card(props) {
           <Logo />
         </div>
 
-        <span className="absolute right-0 left-5 sm:text-center top-[5rem] text-sm sm:text-lg  sm:top-[6rem] sm:left-0 tracking-[0.2em] w-full card-number">
+        <span className="absolute right-0 left-5 top-[5rem] text-sm sm:text-lg  sm:top-[6rem] tracking-[0.2em] w-full card-number">
           {props.cardNumber.split("").map((number, idx) => (
             <span key={idx}>{number}</span>
           ))}
         </span>
-        <span className="absolute bottom-6 left-5 sm:bottom-4 sm:left-2 text-sm tracking-[0.1em]">
-          {props.cardholderName}
+        <span className="absolute bottom-6 left-5 sm:bottom-4 text-sm tracking-[0.1em]">
+          {props.cardholderName.toUpperCase()}
         </span>
-        <span className="absolute bottom-6 right-5 text-sm tracking-[0.2em] sm:right-2">
+        <span className="absolute bottom-6 sm:bottom-4 right-5 text-sm tracking-[0.2em]">
           {`${props.expireDate}/${props.expireYear}`}
         </span>
       </div>
