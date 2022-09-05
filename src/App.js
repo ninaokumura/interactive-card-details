@@ -13,7 +13,7 @@ function App() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   return (
-    <div className="h-screen w-full sm:flex">
+    <div className="h-screen w-full lg:flex">
       <Card
         cardholderName={cardholderName || "Jane Appleseed"}
         cardNumber={cardNumber || "0000000000000000"}
@@ -21,7 +21,7 @@ function App() {
         expireYear={expireYear || "00"}
         cvc={cvc || "000"}
       />
-      <div className="bg-white w-full h-full flex items-start mt-20 sm:mt-0 justify-center sm:items-center">
+      <div className="bg-white w-full h-full flex items-start mt-24 lg:mt-0 justify-center lg:items-center">
         {!isSubmitted ? (
           <Form
             cardholderName={cardholderName}
