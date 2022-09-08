@@ -28,10 +28,10 @@ export default function Card(props) {
             <span key={idx}>{number}</span>
           ))}
         </span>
-        <span className="absolute bottom-6 left-5 lg:bottom-4 tracking-[0.1em]">
+        <span className="absolute bottom-6 left-5 lg:bottom-4 tracking-[0.1em] text-[10px] font-sans-serif">
           {props.cardholderName.toUpperCase()}
         </span>
-        <span className="absolute bottom-6 lg:bottom-4 right-5 tracking-[0.2em]">
+        <span className="absolute bottom-6 lg:bottom-4 right-5 tracking-[0.2em] text-[10px] font-sans-serif">
           {`${props.expireDate}/${props.expireYear}`}
         </span>
       </div>
