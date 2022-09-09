@@ -11,7 +11,7 @@ const isNotNumber = n => isNaN(Number(n));
 export default function Form(props) {
   const schema = yup.object().shape({
     cardholderName: yup.string().required("Can't be blank"),
-    cardNumber: yup.string().required("Can't be blank"),
+    cardNumber: yup.number().typeError("Can't be blank").required(),
     expireDate: yup
       .number()
       .typeError("Can't be blank")
