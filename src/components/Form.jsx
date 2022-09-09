@@ -10,11 +10,8 @@ const isNotNumber = n => isNaN(Number(n));
 
 export default function Form(props) {
   const schema = yup.object().shape({
-    cardholderName: yup.string().required("Your full name is required!"),
-    cardNumber: yup
-      .number()
-      .typeError("you must enter a valid card number")
-      .required(),
+    cardholderName: yup.string().required("Can't be blank"),
+    cardNumber: yup.string().required("Can't be blank"),
     expireDate: yup
       .number()
       .typeError("Can't be blank")
@@ -107,14 +104,17 @@ export default function Form(props) {
         type="text"
         placeholder="e.g. 1234 5678 9123 0000"
         label="CARD NUMBER"
+        minLength="16"
         maxLength="16"
         onKeyDown={e => {
           // regex => /^\d+$/.test(e.key)
           const isNumber = n => !isNaN(Number(n));
 
-          const isValid = isNumber(e.key) || e.key === "Backspace";
+          const isValid =
+            isNumber(e.key) || e.key === "Backspace" || e.key === "Tab";
 
           if (!isValid) {
+            console.log(e.key);
             e.preventDefault();
           }
         }}
@@ -134,7 +134,8 @@ export default function Form(props) {
             onKeyDown={e => {
               // regex => /^\d+$/.test(e.key)
 
-              const isValid = isNumber(e.key) || e.key === "Backspace";
+              const isValid =
+                isNumber(e.key) || e.key === "Backspace" || e.key === "Tab";
 
               if (!isValid) {
                 e.preventDefault();
@@ -153,7 +154,8 @@ export default function Form(props) {
             onKeyDown={e => {
               // regex => /^\d+$/.test(e.key)
 
-              const isValid = isNumber(e.key) || e.key === "Backspace";
+              const isValid =
+                isNumber(e.key) || e.key === "Backspace" || e.key === "Tab";
 
               if (!isValid) {
                 e.preventDefault();
@@ -175,7 +177,8 @@ export default function Form(props) {
           onKeyDown={e => {
             // regex => /^\d+$/.test(e.key)
 
-            const isValid = isNumber(e.key) || e.key === "Backspace";
+            const isValid =
+              isNumber(e.key) || e.key === "Backspace" || e.key === "Tab";
 
             if (!isValid) {
               e.preventDefault();
