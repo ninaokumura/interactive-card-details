@@ -39,7 +39,7 @@ export default function Form(props) {
     watch,
   } = useForm({
     resolver: yupResolver(schema),
-    mode: "all",
+    mode: "onSubmit",
   });
 
   const { cardholderName, cardNumber, expireDate, expireYear, cvc } = watch();
