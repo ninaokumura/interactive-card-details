@@ -27,8 +27,9 @@ Users should be able to:
 - See hover, active, and focus states for interactive elements on the page
 
 ### Screenshot
+![card-mobile](https://user-images.githubusercontent.com/79299205/189582541-f3741404-bbda-4397-b49d-45e91263c8f0.JPG)
+![card-desktop](https://user-images.githubusercontent.com/79299205/189582545-95b2012b-ab7d-4a63-8ef2-f17023e06955.JPG)
 
-![](./screenshot.jpg)
 
 ### Links
 
